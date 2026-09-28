@@ -37,7 +37,7 @@ class MultimodalChartDataPointExtractor:
             "status": "CALIBRATED",
             "slope": slope,
             "intercept": intercept,
-            "r_squared": 1.0 # Exact for 2 points
+            "r_squared": (1.0 - sum((v - (slope*c + intercept))**2 for c,v in zip(coords,vals)) / sum((v-sum_v/n)**2 for v in vals)) if any(v != vals[0] for v in vals) else 1.0
         }
 
     def extract_bar_chart_series(self, bars_coords, y_calibration):

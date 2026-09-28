@@ -1,0 +1,34 @@
+{
+  "manifest_version": "0.3",
+  "name": "genpark-chart-coordinates",
+  "version": "1.0.1",
+  "description": "Calibrate linear chart axes and convert supplied bar or scatter pixel coordinates to values. No image recognition or logarithmic axes.",
+  "author": {
+    "name": "GenPark AI Engineering"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alpha-Park/genpark-multimodal-chart-data-point-extractor-skill"
+  },
+  "server": {
+    "type": "python",
+    "entry_point": "mcp_server.py",
+    "mcp_config": {
+      "command": "python",
+      "args": [
+        "${__dirname}/mcp_server.py"
+      ]
+    }
+  },
+  "compatibility": {
+    "platforms": [
+      "win32",
+      "darwin",
+      "linux"
+    ],
+    "runtimes": {
+      "python": ">=3.9"
+    }
+  }
+}
